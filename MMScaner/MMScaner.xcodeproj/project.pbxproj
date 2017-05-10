@@ -15,6 +15,7 @@
 		AAE5C6071EC32F5700E17C57 /* MMScanerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C6061EC32F5700E17C57 /* MMScanerTests.swift */; };
 		AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C6151EC3330700E17C57 /* CameraViewController.swift */; };
 		AAE5C6181EC3330700E17C57 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C6161EC3330700E17C57 /* CameraViewController.xib */; };
+		AAE5C61B1EC3339200E17C57 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C61A1EC3339200E17C57 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		AAE5C6081EC32F5700E17C57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE5C6151EC3330700E17C57 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = Sources/CameraViewController.swift; sourceTree = "<group>"; };
 		AAE5C6161EC3330700E17C57 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = Sources/CameraViewController.xib; sourceTree = "<group>"; };
+		AAE5C61A1EC3339200E17C57 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = Sources/CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		AAE5C5F01EC32F5700E17C57 /* MMScaner */ = {
 			isa = PBXGroup;
 			children = (
+				AAE5C6191EC3337F00E17C57 /* Views */,
 				AAE5C6121EC332D600E17C57 /* Controllers */,
 				AAE5C5F11EC32F5700E17C57 /* AppDelegate.swift */,
 				AAE5C5F51EC32F5700E17C57 /* Main.storyboard */,
@@ -108,6 +111,14 @@
 				AAE5C6161EC3330700E17C57 /* CameraViewController.xib */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AAE5C6191EC3337F00E17C57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AAE5C61A1EC3339200E17C57 /* CameraView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 				AAE5C5F41EC32F5700E17C57 /* ViewController.swift in Sources */,
 				AAE5C5F21EC32F5700E17C57 /* AppDelegate.swift in Sources */,
 				AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */,
+				AAE5C61B1EC3339200E17C57 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// The view controller that display the camera feeds and shows the edges of the document if detected.
 class CameraViewController: UIViewController {
 
     override func viewDidLoad() {
