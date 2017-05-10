@@ -1,2 +1,3 @@
 # MMScaner
-An iOS document scanner built with CoreImage
+An iOS document scanner built with Core Image
+
