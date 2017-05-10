@@ -16,6 +16,7 @@
 		AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C6151EC3330700E17C57 /* CameraViewController.swift */; };
 		AAE5C6181EC3330700E17C57 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C6161EC3330700E17C57 /* CameraViewController.xib */; };
 		AAE5C61B1EC3339200E17C57 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C61A1EC3339200E17C57 /* CameraView.swift */; };
+		AAE5C61E1EC3369D00E17C57 /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C61D1EC3369D00E17C57 /* ImageCaptureManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		AAE5C6151EC3330700E17C57 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = Sources/CameraViewController.swift; sourceTree = "<group>"; };
 		AAE5C6161EC3330700E17C57 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = Sources/CameraViewController.xib; sourceTree = "<group>"; };
 		AAE5C61A1EC3339200E17C57 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = Sources/CameraView.swift; sourceTree = "<group>"; };
+		AAE5C61D1EC3369D00E17C57 /* ImageCaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCaptureManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		AAE5C5F01EC32F5700E17C57 /* MMScaner */ = {
 			isa = PBXGroup;
 			children = (
+				AAE5C61C1EC3365400E17C57 /* Utils */,
 				AAE5C6191EC3337F00E17C57 /* Views */,
 				AAE5C6121EC332D600E17C57 /* Controllers */,
 				AAE5C5F11EC32F5700E17C57 /* AppDelegate.swift */,
@@ -119,6 +122,14 @@
 				AAE5C61A1EC3339200E17C57 /* CameraView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		AAE5C61C1EC3365400E17C57 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AAE5C61D1EC3369D00E17C57 /* ImageCaptureManager.swift */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +182,7 @@
 				TargetAttributes = {
 					AAE5C5ED1EC32F5700E17C57 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = FHX9HANGB7;
 						ProvisioningStyle = Automatic;
 					};
 					AAE5C6011EC32F5700E17C57 = {
@@ -225,6 +237,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAE5C61E1EC3369D00E17C57 /* ImageCaptureManager.swift in Sources */,
 				AAE5C5F41EC32F5700E17C57 /* ViewController.swift in Sources */,
 				AAE5C5F21EC32F5700E17C57 /* AppDelegate.swift in Sources */,
 				AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */,
@@ -369,6 +382,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FHX9HANGB7;
 				INFOPLIST_FILE = MMScaner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.meima.MMScaner;
@@ -381,6 +395,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FHX9HANGB7;
 				INFOPLIST_FILE = MMScaner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.meima.MMScaner;

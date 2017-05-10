@@ -7,14 +7,24 @@
 //
 
 import UIKit
+import AVFoundation
 
 /// The view controller that display the camera feeds and shows the edges of the document if detected.
 class CameraViewController: UIViewController {
 
+    /// the image capture manager
+    private var imageCaptureManager: ImageCaptureManager?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let captureVideoPreviewLayer = self.view.layer as? AVCaptureVideoPreviewLayer {
+            self.imageCaptureManager = ImageCaptureManager(layer: captureVideoPreviewLayer)
+        }
+        else {
+            debugPrint("The layer of the root view must be a subclass of AVCaptureVideoPreviewLayer")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,15 +32,9 @@ class CameraViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.imageCaptureManager?.startSession()
     }
-    */
 
 }
