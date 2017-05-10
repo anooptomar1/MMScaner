@@ -9,14 +9,25 @@
 import Foundation
 import AVFoundation
 import CoreVideo
+import CoreImage
 
-class ImageCaptureManager {
+class ImageCaptureManager: NSObject {
 
+    //  the view to show the detected edges
+    weak var edgeDetectionView: EdgeDetectionView?
+    
     //  the image capture session
     private let captureSession: AVCaptureSession
     
+    /// the rectange detector that's used to detect the edge of the document
+    //TODO: settings
+    fileprivate let rectangleDetector = CIDetector(ofType: CIDetectorTypeRectangle, context: nil, options: [CIDetectorAccuracy:CIDetectorAccuracyHigh])
+    
     /// Initialize a ImageCaptureManager instance
-    init?(layer: AVCaptureVideoPreviewLayer) {
+    /// - parameter layer: the layer that shows the camera feeds
+    /// - parameter edgeDetectionView: the view that shows the detected edge
+    init?(layer: AVCaptureVideoPreviewLayer,
+          edgeDetectionView: EdgeDetectionView) {
         
         let captureSession = AVCaptureSession()
         captureSession.sessionPreset = AVCaptureSessionPresetPhoto
@@ -42,6 +53,11 @@ class ImageCaptureManager {
         layer.videoGravity = AVLayerVideoGravityResizeAspectFill
     
         self.captureSession = captureSession
+        self.edgeDetectionView = edgeDetectionView
+        
+        super.init()
+        
+        videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "video_output"))
     }
     
     /// Start showing the camera feeds
@@ -69,4 +85,26 @@ class ImageCaptureManager {
         self.captureSession.stopRunning()
     }
     
+}
+
+/// AVCaptureVideoDataOutputSampleBufferDelegate
+extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
+    
+    func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, from connection: AVCaptureConnection!) {
+        guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+            return
+        }
+        let videoOutputImage = CIImage.init(cvPixelBuffer: pixelBuffer)
+        guard let rectangeFeatures = self.rectangleDetector?.features(in: videoOutputImage) as? [CIRectangleFeature] else {
+            return
+        }
+        guard let biggestRectangeFeature = rectangeFeatures.findBiggestRectangle() else {
+            return
+        }
+        let quad = biggestRectangeFeature.makeQuad()
+        let landscapeImageSize = videoOutputImage.extent.size
+        DispatchQueue.main.async { [weak self] in
+            self?.edgeDetectionView?.showEdgesWithQuad(quad, landscapeImageSize: landscapeImageSize)
+        }
+    }
 }
