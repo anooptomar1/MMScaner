@@ -104,7 +104,7 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         let quad = biggestRectangeFeature.makeQuad()
         let landscapeImageSize = videoOutputImage.extent.size
         DispatchQueue.main.async { [weak self] in
-            self?.edgeDetectionView?.showEdgesWithQuad(quad, landscapeImageSize: landscapeImageSize)
+            self?.edgeDetectionView?.showQuad(quad, inLandscapeImageWithSize: landscapeImageSize)
         }
     }
 }

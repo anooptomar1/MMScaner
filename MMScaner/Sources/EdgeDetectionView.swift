@@ -12,7 +12,10 @@ import QuartzCore
 /// The view that display the detected edges of the document
 class EdgeDetectionView: UIView {
     
+    /// the landscape image size
     private var landscapeImageSize:CGSize?
+    
+    /// the quad in the landscape image
     private var quadInImage:Quad?
     
     override init(frame: CGRect) {
@@ -78,13 +81,21 @@ class EdgeDetectionView: UIView {
         
     }
     
-    func showEdgesWithQuad(_ quad: Quad,
-                           landscapeImageSize: CGSize){
+    /// Show the quad in the current view
+    /// - parameter quad: the quad object that represents the edges
+    /// - parameter landscapeImageSize: the landscape image size
+    func showQuad(_ quad: Quad,
+                  inLandscapeImageWithSize landscapeImageSize: CGSize){
         self.quadInImage = quad
         self.landscapeImageSize = landscapeImageSize
         self.setNeedsDisplay()
     }
     
+    /// Transform the Quad object from the landscape image coordinate system to the UIView coordinate system
+    /// - parameter quad: the quad object in the landscape image cooridinate system
+    /// - parameter landscapeImageSize: the landscape image size
+    /// - parameter viewSize: the size of the UIView
+    /// - returns: the quad object in the UIView coordinate system
     private func transformQuad(_ quad:Quad,
                                fromLandscapeImageWithSize landscapeImageSize:CGSize,
                                toViewWithSize viewSize:CGSize) -> Quad{
@@ -110,17 +121,28 @@ class EdgeDetectionView: UIView {
         return result
     }
     
+    /// Create a CGAffineTransform object that aspect fill a size into another size
+    /// - parameter fromSize: the source size
+    /// - parameter toSize: the target size
+    /// - returns: the transform object
     private func transform(forSize fromSize: CGSize, aspectFillIntoSize toSize: CGSize) -> CGAffineTransform {
         let scale = max(toSize.width / fromSize.width, toSize.height/fromSize.height)
         return CGAffineTransform.init(scaleX: scale, y: scale)
     }
     
+    /// Create a CGAffineTransform object that flips the coordinate system
+    /// - parameter height: the height of the coordinate system
+    /// - returns: the transform object
     private func flipCooridnateSystem(withHeight height: CGFloat) -> CGAffineTransform {
         var transform = CGAffineTransform(scaleX: 1, y: -1)
         transform = transform.translatedBy(x: 0, y: -height)
         return transform
     }
     
+    /// Create a CGAffineTransform object that transform the center of a rectange to the center of another rectange
+    /// - parameter fromRect: the source rectangle
+    /// - parameter toRect: the target rectangle
+    /// - returns: the transform object
     private func translate(fromCenterOfRect fromRect: CGRect, toCenterOfRect toRect: CGRect) -> CGAffineTransform {
         let translate = CGPoint(x: toRect.midX - fromRect.midX, y: toRect.midY - fromRect.midY)
         return CGAffineTransform(translationX: translate.x, y: translate.y)
