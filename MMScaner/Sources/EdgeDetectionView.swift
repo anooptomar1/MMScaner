@@ -9,14 +9,36 @@
 import UIKit
 import QuartzCore
 
+fileprivate extension CGContext {
+    
+    fileprivate func constructPath(topLeft: CGPoint,
+                                   topRight: CGPoint,
+                                   bottomRight: CGPoint,
+                                   bottomLeft: CGPoint){
+        self.move(to: topLeft)
+        self.addLine(to: topRight)
+        self.addLine(to: bottomRight)
+        self.addLine(to: bottomLeft)
+        self.closePath()
+    }
+    
+    fileprivate func constructPath(from quadrangle: Quadrangle){
+        self.constructPath(topLeft: quadrangle.topLeft,
+                           topRight: quadrangle.topRight,
+                           bottomRight: quadrangle.bottomRight,
+                           bottomLeft: quadrangle.bottomLeft)
+    }
+    
+}
+
 /// The view that display the detected edges of the document
 class EdgeDetectionView: UIView {
     
     /// the landscape image size
     private var landscapeImageSize:CGSize?
     
-    /// the quad in the landscape image
-    private var quadInImage:Quad?
+    /// the quadrangle in the landscape image
+    private var quadrangleInImage:Quadrangle?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -34,7 +56,7 @@ class EdgeDetectionView: UIView {
     
     override func draw(_ rect: CGRect) {
         
-        guard let quadInImage = self.quadInImage else {
+        guard let quadrangleInImage = self.quadrangleInImage else {
             return
         }
         guard let landscapeImageSize = self.landscapeImageSize else {
@@ -44,62 +66,54 @@ class EdgeDetectionView: UIView {
             return
         }
         
-        let quadInView = self.transformQuad(quadInImage, fromLandscapeImageWithSize: landscapeImageSize, toViewWithSize: rect.size)
+        let quadrangleInImageInView = self.transformQuadrangle(quadrangleInImage,
+                                                  fromLandscapeImageWithSize: landscapeImageSize,
+                                                  toViewWithSize: rect.size)
         
         context.saveGState()
         
         //  draw the overlay
         //  the path of the bounds
-        context.move(to: CGPoint(x: 0, y: 0))
-        context.addLine(to: CGPoint(x: self.bounds.width, y: 0))
-        context.addLine(to: CGPoint(x: self.bounds.width, y: self.bounds.height))
-        context.addLine(to: CGPoint(x: 0, y: self.bounds.height))
-        context.addLine(to: CGPoint(x: 0, y: 0))
-        context.closePath()
+        context.constructPath(topLeft: CGPoint(x: 0, y: 0),
+                              topRight: CGPoint(x: self.bounds.width, y: 0),
+                              bottomRight: CGPoint(x: self.bounds.width, y: self.bounds.height),
+                              bottomLeft: CGPoint(x: 0, y: self.bounds.height))
         
-        context.move(to: quadInView.topLeft)
-        context.addLine(to: quadInView.bottomLeft)
-        context.addLine(to: quadInView.bottomRight)
-        context.addLine(to: quadInView.topRight)
-        context.closePath()
         
         //TODO: appearance
+        context.constructPath(from: quadrangleInImageInView)
         context.setFillColor(UIColor.black.withAlphaComponent(0.75).cgColor)
         context.fillPath(using: .evenOdd)
+        
         context.restoreGState()
         
         // draw the lines
         context.setStrokeColor(UIColor.white.cgColor)
         context.setLineWidth(3.0)
         
-        context.move(to: quadInView.topLeft)
-        context.addLine(to: quadInView.bottomLeft)
-        context.addLine(to: quadInView.bottomRight)
-        context.addLine(to: quadInView.topRight)
-        context.closePath()
+        context.constructPath(from: quadrangleInImageInView)
         context.strokePath()
-        
     }
     
-    /// Show the quad in the current view
-    /// - parameter quad: the quad object that represents the edges
+    /// Show the quadrangle in the current view
+    /// - parameter quad: the quadrangle object that represents the edges
     /// - parameter landscapeImageSize: the landscape image size
-    func showQuad(_ quad: Quad,
-                  inLandscapeImageWithSize landscapeImageSize: CGSize){
-        self.quadInImage = quad
+    func showQuadrangle(_ quadrangle: Quadrangle,
+                        inLandscapeImageWithSize landscapeImageSize: CGSize){
+        self.quadrangleInImage = quadrangle
         self.landscapeImageSize = landscapeImageSize
         self.setNeedsDisplay()
     }
     
-    /// Transform the Quad object from the landscape image coordinate system to the UIView coordinate system
+    /// Transform the Quadrangle object from the landscape image coordinate system to the UIView coordinate system
     /// - parameter quad: the quad object in the landscape image cooridinate system
     /// - parameter landscapeImageSize: the landscape image size
     /// - parameter viewSize: the size of the UIView
-    /// - returns: the quad object in the UIView coordinate system
-    private func transformQuad(_ quad:Quad,
-                               fromLandscapeImageWithSize landscapeImageSize:CGSize,
-                               toViewWithSize viewSize:CGSize) -> Quad{
-        var result = quad
+    /// - returns: the Quadrangle object in the UIView coordinate system
+    private func transformQuadrangle(_ quadrangle:Quadrangle,
+                                     fromLandscapeImageWithSize landscapeImageSize:CGSize,
+                                     toViewWithSize viewSize:CGSize) -> Quadrangle{
+        var result = quadrangle
         
         let portraitImageSize = CGSize.init(width: landscapeImageSize.height, height: landscapeImageSize.width)
         var transform = self.transform(forSize: portraitImageSize, aspectFillIntoSize: viewSize)

@@ -9,19 +9,19 @@
 import Foundation
 import QuartzCore
 
-// The four points of the document edge
-struct Quad {
+// The quadrangle with four vertices
+struct Quadrangle {
     
-    //  The top left point of the document edge
+    //  The top left vertex
     var topLeft: CGPoint
     
-    //  The top right point of the document edge
+    //  The top right vertex
     var topRight: CGPoint
     
-    //  The bottom left point of the document edge
+    //  The bottom left vertex
     var bottomLeft: CGPoint
     
-    //  The bottom right point of the document edge
+    //  The bottom right vertex
     var bottomRight: CGPoint
     
     init(topLeft: CGPoint,
@@ -35,7 +35,7 @@ struct Quad {
     }
     
     
-    /// Apply the transform to all its points
+    /// Apply the transform to all its vertices
     /// - parameter transform: the transform to be applied
     mutating func applying(_ transform: CGAffineTransform) {
         self.topLeft = self.topLeft.applying(transform)
@@ -43,6 +43,13 @@ struct Quad {
         self.bottomRight = self.bottomRight.applying(transform)
         self.bottomLeft = self.bottomLeft.applying(transform)
     }
-
     
+    /// Check if the quadrangle has any vertices that equal to zero
+    /// - returns: true if the quadrangle doesn't have any vertex that equals to zero, otherwise false
+    func isValid() -> Bool{
+        return !(self.topLeft.equalTo(.zero) ||
+        self.topRight.equalTo(.zero) ||
+        self.bottomLeft.equalTo(.zero) ||
+        self.bottomRight.equalTo(.zero))
+    }
 }

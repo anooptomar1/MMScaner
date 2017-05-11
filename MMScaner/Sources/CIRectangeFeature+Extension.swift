@@ -11,8 +11,8 @@ import CoreImage
 
 extension CIRectangleFeature {
     
-    func makeQuad() -> Quad {
-        return Quad(topLeft: self.topLeft,
+    func makeQuadrangle() -> Quadrangle {
+        return Quadrangle(topLeft: self.topLeft,
                     topRight: self.topRight,
                     bottomRight: self.bottomRight,
                     bottomLeft: self.bottomLeft)

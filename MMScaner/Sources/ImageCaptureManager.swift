@@ -10,6 +10,7 @@ import Foundation
 import AVFoundation
 import CoreVideo
 import CoreImage
+import UIKit
 
 class ImageCaptureManager: NSObject {
 
@@ -18,6 +19,9 @@ class ImageCaptureManager: NSObject {
     
     //  the image capture session
     private let captureSession: AVCaptureSession
+    
+    //  the quadrangle stablizer that stablize the quadrangle
+    fileprivate let quadrangleFilter = QuadrangleFilter()
     
     /// the rectange detector that's used to detect the edge of the document
     //TODO: settings
@@ -101,10 +105,26 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard let biggestRectangeFeature = rectangeFeatures.findBiggestRectangle() else {
             return
         }
-        let quad = biggestRectangeFeature.makeQuad()
+        var quadrangle = biggestRectangeFeature.makeQuadrangle()
+        quadrangle = self.quadrangleFilter.filteredQuadrangle(from: quadrangle)
+        
         let landscapeImageSize = videoOutputImage.extent.size
-        DispatchQueue.main.async { [weak self] in
-            self?.edgeDetectionView?.showQuad(quad, inLandscapeImageWithSize: landscapeImageSize)
+        if quadrangle.isValid() {
+            DispatchQueue.main.async { [weak self] in
+                self?.edgeDetectionView?.showQuadrangle(quadrangle, inLandscapeImageWithSize: landscapeImageSize)
+                self?.setEdgeDetectionView(self?.edgeDetectionView, hidden: false)
+            }
         }
+        else {
+            DispatchQueue.main.async { [weak self] in
+                self?.setEdgeDetectionView(self?.edgeDetectionView, hidden: true)
+            }
+        }
+    }
+    
+    private func setEdgeDetectionView(_ edgeDetectionView: EdgeDetectionView?, hidden: Bool){
+        UIView.animate(withDuration: 0.3, delay: 0, options: .beginFromCurrentState, animations: { 
+            edgeDetectionView?.alpha = hidden ? 0 : 1
+        }, completion: nil)
     }
 }

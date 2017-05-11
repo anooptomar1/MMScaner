@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0C584641EC3DC470087AD3C /* PointFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C584631EC3DC470087AD3C /* PointFilter.swift */; };
+		A0C584861EC429AB0087AD3C /* QuadrangleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */; };
 		AAD7A1841EC351B4003620DE /* EdgeDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1831EC351B4003620DE /* EdgeDetectionView.swift */; };
 		AAD7A1871EC351BE003620DE /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */; };
 		AAD7A1881EC351BE003620DE /* CIRectangeFeature+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */; };
-		AAD7A18A1EC351C4003620DE /* Quad.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1891EC351C4003620DE /* Quad.swift */; };
+		AAD7A18A1EC351C4003620DE /* Quadrangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1891EC351C4003620DE /* Quadrangle.swift */; };
 		AAE5C5F21EC32F5700E17C57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C5F11EC32F5700E17C57 /* AppDelegate.swift */; };
 		AAE5C5F41EC32F5700E17C57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C5F31EC32F5700E17C57 /* ViewController.swift */; };
 		AAE5C5F71EC32F5700E17C57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C5F51EC32F5700E17C57 /* Main.storyboard */; };
@@ -33,10 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0C584631EC3DC470087AD3C /* PointFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointFilter.swift; path = Sources/PointFilter.swift; sourceTree = "<group>"; };
+		A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadrangleFilter.swift; sourceTree = "<group>"; };
 		AAD7A1831EC351B4003620DE /* EdgeDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EdgeDetectionView.swift; path = Sources/EdgeDetectionView.swift; sourceTree = "<group>"; };
 		AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCaptureManager.swift; path = Sources/ImageCaptureManager.swift; sourceTree = "<group>"; };
 		AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CIRectangeFeature+Extension.swift"; path = "Sources/CIRectangeFeature+Extension.swift"; sourceTree = "<group>"; };
-		AAD7A1891EC351C4003620DE /* Quad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quad.swift; path = Sources/Quad.swift; sourceTree = "<group>"; };
+		AAD7A1891EC351C4003620DE /* Quadrangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quadrangle.swift; path = Sources/Quadrangle.swift; sourceTree = "<group>"; };
 		AAE5C5EE1EC32F5700E17C57 /* MMScaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMScaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE5C5F11EC32F5700E17C57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE5C5F31EC32F5700E17C57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 			children = (
 				AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */,
 				AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */,
+				A0C584631EC3DC470087AD3C /* PointFilter.swift */,
+				A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -144,7 +150,7 @@
 		AAE5C61F1EC33E2C00E17C57 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				AAD7A1891EC351C4003620DE /* Quad.swift */,
+				AAD7A1891EC351C4003620DE /* Quadrangle.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -254,9 +260,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAD7A18A1EC351C4003620DE /* Quad.swift in Sources */,
+				AAD7A18A1EC351C4003620DE /* Quadrangle.swift in Sources */,
 				AAE5C5F41EC32F5700E17C57 /* ViewController.swift in Sources */,
+				A0C584641EC3DC470087AD3C /* PointFilter.swift in Sources */,
 				AAD7A1881EC351BE003620DE /* CIRectangeFeature+Extension.swift in Sources */,
+				A0C584861EC429AB0087AD3C /* QuadrangleFilter.swift in Sources */,
 				AAE5C5F21EC32F5700E17C57 /* AppDelegate.swift in Sources */,
 				AAD7A1841EC351B4003620DE /* EdgeDetectionView.swift in Sources */,
 				AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */,
