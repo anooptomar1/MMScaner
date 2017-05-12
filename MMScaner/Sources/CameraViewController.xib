@@ -5,7 +5,7 @@
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12120"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,14 +24,27 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ghe-mi-5NV">
+                    <rect key="frame" x="163" y="599" width="48" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="48" id="OuG-SP-dhg"/>
+                        <constraint firstAttribute="height" constant="48" id="iZt-e3-3Sm"/>
+                    </constraints>
+                    <state key="normal" image="ic_photo_camera_white_48pt"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="YbO-DR-hET" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="12G-QO-qUh"/>
                 <constraint firstAttribute="bottom" secondItem="YbO-DR-hET" secondAttribute="bottom" id="GGX-3H-yEJ"/>
+                <constraint firstItem="ghe-mi-5NV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="epO-Q6-SOe"/>
+                <constraint firstAttribute="bottom" secondItem="ghe-mi-5NV" secondAttribute="bottom" constant="20" id="fMP-lD-q31"/>
                 <constraint firstItem="YbO-DR-hET" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="oNv-dS-vdi"/>
                 <constraint firstAttribute="trailing" secondItem="YbO-DR-hET" secondAttribute="trailing" id="t9C-rP-ZXG"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="ic_photo_camera_white_48pt" width="48" height="48"/>
+    </resources>
 </document>
