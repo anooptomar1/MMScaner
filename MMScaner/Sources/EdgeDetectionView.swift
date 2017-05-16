@@ -96,7 +96,7 @@ class EdgeDetectionView: UIView {
     }
     
     /// Show the quadrangle in the current view
-    /// - parameter quad: the quadrangle object that represents the edges
+    /// - parameter quadrangle: the quadrangle object that represents the edges
     /// - parameter landscapeImageSize: the landscape image size
     func showQuadrangle(_ quadrangle: Quadrangle,
                         inLandscapeImageWithSize landscapeImageSize: CGSize){
@@ -106,7 +106,7 @@ class EdgeDetectionView: UIView {
     }
     
     /// Transform the Quadrangle object from the landscape image coordinate system to the UIView coordinate system
-    /// - parameter quad: the quad object in the landscape image cooridinate system
+    /// - parameter quadrangle: the quad object in the landscape image cooridinate system
     /// - parameter landscapeImageSize: the landscape image size
     /// - parameter viewSize: the size of the UIView
     /// - returns: the Quadrangle object in the UIView coordinate system

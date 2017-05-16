@@ -29,6 +29,10 @@ class CameraViewController: UIViewController {
             debugPrint("The layer of the root view must be a subclass of AVCaptureVideoPreviewLayer")
         }
     }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -38,6 +42,10 @@ class CameraViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.imageCaptureManager?.startSession()
+    }
+    
+    @IBAction func close() {
+        self.dismiss(animated: true, completion: nil)
     }
 
 }
