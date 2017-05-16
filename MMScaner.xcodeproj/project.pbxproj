@@ -22,6 +22,7 @@
 		AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C6151EC3330700E17C57 /* CameraViewController.swift */; };
 		AAE5C6181EC3330700E17C57 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C6161EC3330700E17C57 /* CameraViewController.xib */; };
 		AAE5C61B1EC3339200E17C57 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C61A1EC3339200E17C57 /* CameraView.swift */; };
+		AAFF23001ECB121F00587163 /* ImageEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF22FF1ECB121F00587163 /* ImageEditManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		AAE5C6151EC3330700E17C57 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = Sources/CameraViewController.swift; sourceTree = "<group>"; };
 		AAE5C6161EC3330700E17C57 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = Sources/CameraViewController.xib; sourceTree = "<group>"; };
 		AAE5C61A1EC3339200E17C57 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = Sources/CameraView.swift; sourceTree = "<group>"; };
+		AAFF22FF1ECB121F00587163 /* ImageEditManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEditManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */,
 				A0C584631EC3DC470087AD3C /* PointFilter.swift */,
 				A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */,
+				AAFF22FF1ECB121F00587163 /* ImageEditManager.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAD7A18A1EC351C4003620DE /* Quadrangle.swift in Sources */,
+				AAFF23001ECB121F00587163 /* ImageEditManager.swift in Sources */,
 				AAE5C5F41EC32F5700E17C57 /* ViewController.swift in Sources */,
 				A0C584641EC3DC470087AD3C /* PointFilter.swift in Sources */,
 				AAD7A1881EC351BE003620DE /* CIRectangeFeature+Extension.swift in Sources */,
