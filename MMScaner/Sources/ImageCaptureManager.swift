@@ -147,14 +147,11 @@ extension ImageCaptureManager: AVCaptureVideoDataOutputSampleBufferDelegate {
             return
         }
         let videoOutputImage = CIImage.init(cvPixelBuffer: pixelBuffer)
-        guard let rectangeFeatures = self.rectangleDetector?.features(in: videoOutputImage) as? [CIRectangleFeature] else {
-            return
+        var quadrangle = Quadrangle.zero
+        if let rectangeFeatures = self.rectangleDetector?.features(in: videoOutputImage) as? [CIRectangleFeature],
+            let biggestRectangeFeature = rectangeFeatures.findBiggestRectangle(){
+            quadrangle = biggestRectangeFeature.makeQuadrangle()
         }
-        guard let biggestRectangeFeature = rectangeFeatures.findBiggestRectangle() else {
-            return
-        }
-        
-        var quadrangle = biggestRectangeFeature.makeQuadrangle()
         quadrangle = self.quadrangleFilter.filteredQuadrangle(from: quadrangle)
         
         let landscapeImageSize = videoOutputImage.extent.size

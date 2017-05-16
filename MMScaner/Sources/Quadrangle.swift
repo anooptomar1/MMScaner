@@ -12,6 +12,12 @@ import QuartzCore
 // The quadrangle with four vertices
 struct Quadrangle {
     
+    //  a zero size quadrangle
+    static let zero = Quadrangle(topLeft: .zero,
+                                 topRight: .zero,
+                                 bottomRight: .zero,
+                                 bottomLeft: .zero)
+    
     //  The top left vertex
     var topLeft: CGPoint
     
