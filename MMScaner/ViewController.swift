@@ -22,7 +22,8 @@ class ViewController: UIViewController {
 
     @IBAction func startScanning() {
         let viewController = CameraViewController()
-        self.present(viewController, animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: viewController)
+        self.present(navigationController, animated: true, completion: nil)
     }
     
 }

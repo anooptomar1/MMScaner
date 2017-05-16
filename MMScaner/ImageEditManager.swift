@@ -16,7 +16,8 @@ class ImageEditManager {
                    completion: @escaping (UIImage?)->Void){
         DispatchQueue.global().async {
             var uiImage: UIImage? = nil
-            if let ciImage = correctPerspective(for: CIImage(data: imageData), with: quadrangle) {
+            let rawImage = CIImage(data: imageData)
+            if let ciImage = correctPerspective(for: rawImage, with: quadrangle) {
                 uiImage = UIImage(ciImage: ciImage, scale: 1.0, orientation: UIImageOrientation.right)
             }
             DispatchQueue.main.async {
