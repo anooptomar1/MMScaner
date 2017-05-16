@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A0C584641EC3DC470087AD3C /* PointFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C584631EC3DC470087AD3C /* PointFilter.swift */; };
-		A0C584861EC429AB0087AD3C /* QuadrangleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */; };
 		AAD7A1841EC351B4003620DE /* EdgeDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1831EC351B4003620DE /* EdgeDetectionView.swift */; };
 		AAD7A1871EC351BE003620DE /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */; };
 		AAD7A1881EC351BE003620DE /* CIRectangeFeature+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */; };
@@ -22,9 +21,10 @@
 		AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C6151EC3330700E17C57 /* CameraViewController.swift */; };
 		AAE5C6181EC3330700E17C57 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C6161EC3330700E17C57 /* CameraViewController.xib */; };
 		AAE5C61B1EC3339200E17C57 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C61A1EC3339200E17C57 /* CameraView.swift */; };
-		AAFF23001ECB121F00587163 /* ImageEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF22FF1ECB121F00587163 /* ImageEditManager.swift */; };
-		AAFF23051ECB1AB100587163 /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF23031ECB1AB100587163 /* ImagePreviewController.swift */; };
-		AAFF23061ECB1AB100587163 /* ImagePreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFF23041ECB1AB100587163 /* ImagePreviewController.xib */; };
+		AAFF23091ECB300800587163 /* ImagePreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF23071ECB300800587163 /* ImagePreviewController.swift */; };
+		AAFF230A1ECB300800587163 /* ImagePreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFF23081ECB300800587163 /* ImagePreviewController.xib */; };
+		AAFF230D1ECB301500587163 /* ImageEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF230B1ECB301500587163 /* ImageEditManager.swift */; };
+		AAFF230E1ECB301500587163 /* QuadrangleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF230C1ECB301500587163 /* QuadrangleFilter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 
 /* Begin PBXFileReference section */
 		A0C584631EC3DC470087AD3C /* PointFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointFilter.swift; path = Sources/PointFilter.swift; sourceTree = "<group>"; };
-		A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadrangleFilter.swift; sourceTree = "<group>"; };
 		AAD7A1831EC351B4003620DE /* EdgeDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EdgeDetectionView.swift; path = Sources/EdgeDetectionView.swift; sourceTree = "<group>"; };
 		AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCaptureManager.swift; path = Sources/ImageCaptureManager.swift; sourceTree = "<group>"; };
 		AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CIRectangeFeature+Extension.swift"; path = "Sources/CIRectangeFeature+Extension.swift"; sourceTree = "<group>"; };
@@ -57,9 +56,10 @@
 		AAE5C6151EC3330700E17C57 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = Sources/CameraViewController.swift; sourceTree = "<group>"; };
 		AAE5C6161EC3330700E17C57 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = Sources/CameraViewController.xib; sourceTree = "<group>"; };
 		AAE5C61A1EC3339200E17C57 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = Sources/CameraView.swift; sourceTree = "<group>"; };
-		AAFF22FF1ECB121F00587163 /* ImageEditManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageEditManager.swift; sourceTree = "<group>"; };
-		AAFF23031ECB1AB100587163 /* ImagePreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePreviewController.swift; sourceTree = "<group>"; };
-		AAFF23041ECB1AB100587163 /* ImagePreviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImagePreviewController.xib; sourceTree = "<group>"; };
+		AAFF23071ECB300800587163 /* ImagePreviewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImagePreviewController.swift; path = Sources/ImagePreviewController.swift; sourceTree = "<group>"; };
+		AAFF23081ECB300800587163 /* ImagePreviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImagePreviewController.xib; path = Sources/ImagePreviewController.xib; sourceTree = "<group>"; };
+		AAFF230B1ECB301500587163 /* ImageEditManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageEditManager.swift; path = Sources/ImageEditManager.swift; sourceTree = "<group>"; };
+		AAFF230C1ECB301500587163 /* QuadrangleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuadrangleFilter.swift; path = Sources/QuadrangleFilter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,11 +126,11 @@
 		AAE5C6121EC332D600E17C57 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AAFF23071ECB300800587163 /* ImagePreviewController.swift */,
+				AAFF23081ECB300800587163 /* ImagePreviewController.xib */,
 				AAE5C5F31EC32F5700E17C57 /* ViewController.swift */,
 				AAE5C6151EC3330700E17C57 /* CameraViewController.swift */,
 				AAE5C6161EC3330700E17C57 /* CameraViewController.xib */,
-				AAFF23031ECB1AB100587163 /* ImagePreviewController.swift */,
-				AAFF23041ECB1AB100587163 /* ImagePreviewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -147,11 +147,11 @@
 		AAE5C61C1EC3365400E17C57 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AAFF230B1ECB301500587163 /* ImageEditManager.swift */,
 				AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */,
 				AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */,
 				A0C584631EC3DC470087AD3C /* PointFilter.swift */,
-				A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */,
-				AAFF22FF1ECB121F00587163 /* ImageEditManager.swift */,
+				AAFF230C1ECB301500587163 /* QuadrangleFilter.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -251,7 +251,7 @@
 				AAE5C5FC1EC32F5700E17C57 /* LaunchScreen.storyboard in Resources */,
 				AAE5C6181EC3330700E17C57 /* CameraViewController.xib in Resources */,
 				AAE5C5F91EC32F5700E17C57 /* Assets.xcassets in Resources */,
-				AAFF23061ECB1AB100587163 /* ImagePreviewController.xib in Resources */,
+				AAFF230A1ECB300800587163 /* ImagePreviewController.xib in Resources */,
 				AAE5C5F71EC32F5700E17C57 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,17 +271,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAD7A18A1EC351C4003620DE /* Quadrangle.swift in Sources */,
-				AAFF23001ECB121F00587163 /* ImageEditManager.swift in Sources */,
+				AAFF230D1ECB301500587163 /* ImageEditManager.swift in Sources */,
 				AAE5C5F41EC32F5700E17C57 /* ViewController.swift in Sources */,
 				A0C584641EC3DC470087AD3C /* PointFilter.swift in Sources */,
 				AAD7A1881EC351BE003620DE /* CIRectangeFeature+Extension.swift in Sources */,
-				A0C584861EC429AB0087AD3C /* QuadrangleFilter.swift in Sources */,
 				AAE5C5F21EC32F5700E17C57 /* AppDelegate.swift in Sources */,
 				AAD7A1841EC351B4003620DE /* EdgeDetectionView.swift in Sources */,
-				AAFF23051ECB1AB100587163 /* ImagePreviewController.swift in Sources */,
+				AAFF23091ECB300800587163 /* ImagePreviewController.swift in Sources */,
 				AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */,
 				AAD7A1871EC351BE003620DE /* ImageCaptureManager.swift in Sources */,
 				AAE5C61B1EC3339200E17C57 /* CameraView.swift in Sources */,
+				AAFF230E1ECB301500587163 /* QuadrangleFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
