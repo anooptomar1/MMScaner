@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0C584641EC3DC470087AD3C /* PointFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C584631EC3DC470087AD3C /* PointFilter.swift */; };
+		A0C584861EC429AB0087AD3C /* QuadrangleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */; };
+		AAD7A1841EC351B4003620DE /* EdgeDetectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1831EC351B4003620DE /* EdgeDetectionView.swift */; };
+		AAD7A1871EC351BE003620DE /* ImageCaptureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */; };
+		AAD7A1881EC351BE003620DE /* CIRectangeFeature+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */; };
+		AAD7A18A1EC351C4003620DE /* Quadrangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD7A1891EC351C4003620DE /* Quadrangle.swift */; };
 		AAE5C5F21EC32F5700E17C57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C5F11EC32F5700E17C57 /* AppDelegate.swift */; };
 		AAE5C5F41EC32F5700E17C57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C5F31EC32F5700E17C57 /* ViewController.swift */; };
 		AAE5C5F71EC32F5700E17C57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C5F51EC32F5700E17C57 /* Main.storyboard */; };
 		AAE5C5F91EC32F5700E17C57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C5F81EC32F5700E17C57 /* Assets.xcassets */; };
 		AAE5C5FC1EC32F5700E17C57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C5FA1EC32F5700E17C57 /* LaunchScreen.storyboard */; };
 		AAE5C6071EC32F5700E17C57 /* MMScanerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C6061EC32F5700E17C57 /* MMScanerTests.swift */; };
+		AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C6151EC3330700E17C57 /* CameraViewController.swift */; };
+		AAE5C6181EC3330700E17C57 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE5C6161EC3330700E17C57 /* CameraViewController.xib */; };
+		AAE5C61B1EC3339200E17C57 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE5C61A1EC3339200E17C57 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A0C584631EC3DC470087AD3C /* PointFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PointFilter.swift; path = Sources/PointFilter.swift; sourceTree = "<group>"; };
+		A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadrangleFilter.swift; sourceTree = "<group>"; };
+		AAD7A1831EC351B4003620DE /* EdgeDetectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EdgeDetectionView.swift; path = Sources/EdgeDetectionView.swift; sourceTree = "<group>"; };
+		AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageCaptureManager.swift; path = Sources/ImageCaptureManager.swift; sourceTree = "<group>"; };
+		AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CIRectangeFeature+Extension.swift"; path = "Sources/CIRectangeFeature+Extension.swift"; sourceTree = "<group>"; };
+		AAD7A1891EC351C4003620DE /* Quadrangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quadrangle.swift; path = Sources/Quadrangle.swift; sourceTree = "<group>"; };
 		AAE5C5EE1EC32F5700E17C57 /* MMScaner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MMScaner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE5C5F11EC32F5700E17C57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE5C5F31EC32F5700E17C57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +51,9 @@
 		AAE5C6021EC32F5700E17C57 /* MMScanerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MMScanerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE5C6061EC32F5700E17C57 /* MMScanerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMScanerTests.swift; sourceTree = "<group>"; };
 		AAE5C6081EC32F5700E17C57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAE5C6151EC3330700E17C57 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController.swift; path = Sources/CameraViewController.swift; sourceTree = "<group>"; };
+		AAE5C6161EC3330700E17C57 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CameraViewController.xib; path = Sources/CameraViewController.xib; sourceTree = "<group>"; };
+		AAE5C61A1EC3339200E17C57 /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraView.swift; path = Sources/CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,8 +95,11 @@
 		AAE5C5F01EC32F5700E17C57 /* MMScaner */ = {
 			isa = PBXGroup;
 			children = (
+				AAE5C61F1EC33E2C00E17C57 /* Models */,
+				AAE5C61C1EC3365400E17C57 /* Utils */,
+				AAE5C6191EC3337F00E17C57 /* Views */,
+				AAE5C6121EC332D600E17C57 /* Controllers */,
 				AAE5C5F11EC32F5700E17C57 /* AppDelegate.swift */,
-				AAE5C5F31EC32F5700E17C57 /* ViewController.swift */,
 				AAE5C5F51EC32F5700E17C57 /* Main.storyboard */,
 				AAE5C5F81EC32F5700E17C57 /* Assets.xcassets */,
 				AAE5C5FA1EC32F5700E17C57 /* LaunchScreen.storyboard */,
@@ -94,6 +115,44 @@
 				AAE5C6081EC32F5700E17C57 /* Info.plist */,
 			);
 			path = MMScanerTests;
+			sourceTree = "<group>";
+		};
+		AAE5C6121EC332D600E17C57 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAE5C5F31EC32F5700E17C57 /* ViewController.swift */,
+				AAE5C6151EC3330700E17C57 /* CameraViewController.swift */,
+				AAE5C6161EC3330700E17C57 /* CameraViewController.xib */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		AAE5C6191EC3337F00E17C57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AAD7A1831EC351B4003620DE /* EdgeDetectionView.swift */,
+				AAE5C61A1EC3339200E17C57 /* CameraView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		AAE5C61C1EC3365400E17C57 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */,
+				AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */,
+				A0C584631EC3DC470087AD3C /* PointFilter.swift */,
+				A0C584851EC429AB0087AD3C /* QuadrangleFilter.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		AAE5C61F1EC33E2C00E17C57 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAD7A1891EC351C4003620DE /* Quadrangle.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +205,7 @@
 				TargetAttributes = {
 					AAE5C5ED1EC32F5700E17C57 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = FHX9HANGB7;
 						ProvisioningStyle = Automatic;
 					};
 					AAE5C6011EC32F5700E17C57 = {
@@ -180,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE5C5FC1EC32F5700E17C57 /* LaunchScreen.storyboard in Resources */,
+				AAE5C6181EC3330700E17C57 /* CameraViewController.xib in Resources */,
 				AAE5C5F91EC32F5700E17C57 /* Assets.xcassets in Resources */,
 				AAE5C5F71EC32F5700E17C57 /* Main.storyboard in Resources */,
 			);
@@ -199,8 +260,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAD7A18A1EC351C4003620DE /* Quadrangle.swift in Sources */,
 				AAE5C5F41EC32F5700E17C57 /* ViewController.swift in Sources */,
+				A0C584641EC3DC470087AD3C /* PointFilter.swift in Sources */,
+				AAD7A1881EC351BE003620DE /* CIRectangeFeature+Extension.swift in Sources */,
+				A0C584861EC429AB0087AD3C /* QuadrangleFilter.swift in Sources */,
 				AAE5C5F21EC32F5700E17C57 /* AppDelegate.swift in Sources */,
+				AAD7A1841EC351B4003620DE /* EdgeDetectionView.swift in Sources */,
+				AAE5C6171EC3330700E17C57 /* CameraViewController.swift in Sources */,
+				AAD7A1871EC351BE003620DE /* ImageCaptureManager.swift in Sources */,
+				AAE5C61B1EC3339200E17C57 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,7 +410,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FHX9HANGB7;
 				INFOPLIST_FILE = MMScaner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.meima.MMScaner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -353,7 +424,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FHX9HANGB7;
 				INFOPLIST_FILE = MMScaner/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.meima.MMScaner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -408,6 +481,7 @@
 				AAE5C60D1EC32F5700E17C57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAE5C60E1EC32F5700E17C57 /* Build configuration list for PBXNativeTarget "MMScanerTests" */ = {
 			isa = XCConfigurationList;
@@ -416,6 +490,7 @@
 				AAE5C6101EC32F5700E17C57 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
