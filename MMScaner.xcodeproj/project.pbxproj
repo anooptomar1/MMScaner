@@ -25,6 +25,7 @@
 		AAFF230A1ECB300800587163 /* ImagePreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAFF23081ECB300800587163 /* ImagePreviewController.xib */; };
 		AAFF230D1ECB301500587163 /* ImageEditManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF230B1ECB301500587163 /* ImageEditManager.swift */; };
 		AAFF230E1ECB301500587163 /* QuadrangleFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF230C1ECB301500587163 /* QuadrangleFilter.swift */; };
+		AAFF23131ECC7E4000587163 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAFF23121ECC7E4000587163 /* CALayer+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		AAFF23081ECB300800587163 /* ImagePreviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImagePreviewController.xib; path = Sources/ImagePreviewController.xib; sourceTree = "<group>"; };
 		AAFF230B1ECB301500587163 /* ImageEditManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageEditManager.swift; path = Sources/ImageEditManager.swift; sourceTree = "<group>"; };
 		AAFF230C1ECB301500587163 /* QuadrangleFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuadrangleFilter.swift; path = Sources/QuadrangleFilter.swift; sourceTree = "<group>"; };
+		AAFF23121ECC7E4000587163 /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "CALayer+Extension.swift"; path = "Sources/CALayer+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,9 +149,9 @@
 		AAE5C61C1EC3365400E17C57 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				AAFF230F1ECC7D5000587163 /* Extensions */,
 				AAFF230B1ECB301500587163 /* ImageEditManager.swift */,
 				AAD7A1851EC351BE003620DE /* ImageCaptureManager.swift */,
-				AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */,
 				A0C584631EC3DC470087AD3C /* PointFilter.swift */,
 				AAFF230C1ECB301500587163 /* QuadrangleFilter.swift */,
 			);
@@ -162,6 +164,15 @@
 				AAD7A1891EC351C4003620DE /* Quadrangle.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		AAFF230F1ECC7D5000587163 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AAFF23121ECC7E4000587163 /* CALayer+Extension.swift */,
+				AAD7A1861EC351BE003620DE /* CIRectangeFeature+Extension.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +293,7 @@
 				AAD7A1871EC351BE003620DE /* ImageCaptureManager.swift in Sources */,
 				AAE5C61B1EC3339200E17C57 /* CameraView.swift in Sources */,
 				AAFF230E1ECB301500587163 /* QuadrangleFilter.swift in Sources */,
+				AAFF23131ECC7E4000587163 /* CALayer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

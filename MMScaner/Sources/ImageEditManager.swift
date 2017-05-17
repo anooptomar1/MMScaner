@@ -18,12 +18,21 @@ class ImageEditManager {
             var uiImage: UIImage? = nil
             let rawImage = CIImage(data: imageData)
             if let ciImage = correctPerspective(for: rawImage, with: quadrangle) {
-                uiImage = UIImage(ciImage: ciImage, scale: 1.0, orientation: UIImageOrientation.right)
+                uiImage = makeUIImageFromCIImage(ciImage)
             }
             DispatchQueue.main.async {
                 completion(uiImage)
             }
         }
+    }
+    
+    private class func makeUIImageFromCIImage(_ ciImage: CIImage) -> UIImage? {
+        let size = CGSize(width: ciImage.extent.height, height: ciImage.extent.width)
+        _ = UIGraphicsBeginImageContext(size)
+        UIImage(ciImage: ciImage, scale: 1.0, orientation: UIImageOrientation.right).draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+        let uiImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return uiImage
     }
     
     private class func correctPerspective(for image: CIImage?,

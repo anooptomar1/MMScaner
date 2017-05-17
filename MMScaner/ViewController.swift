@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBAction func startScanning() {
         let viewController = CameraViewController()
         let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.navigationBar.isTranslucent = false
         self.present(navigationController, animated: true, completion: nil)
     }
     
